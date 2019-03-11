@@ -6,8 +6,8 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour {
 
 	//public float speed;
-	public Text countText;
-	public Text winText;
+	//public Text countText;
+	//public Text winText;
 
 	private Rigidbody rb;
 	private int count;
@@ -16,8 +16,8 @@ public class PlayerController : MonoBehaviour {
 	void Start () {
 		rb = GetComponent<Rigidbody>();
 		count = 0;
-		setCountText ();
-		winText.text = "";
+		//setCountText ();
+		//winText.text = "";
 	}
 
 	//when player object touches trigger collider (other)
@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour {
 		if (other.gameObject.CompareTag ("Pick Up")) {
 			other.gameObject.SetActive (false);
 			count++;
-			setCountText ();
+			//setCountText ();
 		}
 		if (other.gameObject.CompareTag ("Cylinder")) {
 			GameObject.Destroy (gameObject);
@@ -34,16 +34,13 @@ public class PlayerController : MonoBehaviour {
 		}
 	}
 
-
-
-
-	void setCountText(){
+	/*void setCountText(){
 		countText.text = "Score: " + count.ToString ();
 		if (count >= 10) {
 			winText.text = "Great Score!!";
 		}
 
-	}
+	}*/
 		
 	void update(){
 		if (Input.GetKeyDown ((KeyCode.Space))) {
